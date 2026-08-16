@@ -15,8 +15,8 @@ const increment = (index: number) => {
 const decrement = (index: number) => {
   if (boxes.value[index] !== undefined) return boxes.value[index]--;
 };
-const deleteBox = () => {
-  
+const deleteBox = (index: number) => {
+  boxes.value = boxes.value.filter((_, i) => i !== index);
 };
 </script>
 
