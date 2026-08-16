@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import IconTrash from "~icons/mdi/trash";
 
-const boxes = [1, 4, 5];
+const boxes = ref([1, 4, 5]);
 
+const addBox = () => {
+  boxes.value.push(0);
+}
 const increment = () => {};
 const decrement = () => {};
 const deleteBox = () => {};
@@ -12,7 +16,7 @@ const deleteBox = () => {};
   <div class="main">
     <span>Boxes count {{ boxes.length }}</span>
     <span>Marbles count</span>
-    <button>Add new box</button>
+    <button @click="addBox">Add new box</button>
 
     <div v-for="(box, index) in boxes" :key="index" class="box">
       <button @click="decrement(index)">-</button>
