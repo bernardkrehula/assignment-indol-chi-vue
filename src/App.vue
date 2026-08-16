@@ -12,8 +12,12 @@ const increment = (index: number) => {
   if (boxes.value[index] !== undefined) return boxes.value[index]++;
 };
 
-const decrement = () => {};
-const deleteBox = () => {};
+const decrement = (index: number) => {
+  if (boxes.value[index] !== undefined) return boxes.value[index]--;
+};
+const deleteBox = () => {
+  
+};
 </script>
 
 <template>
