@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { computed } from "@vue/reactivity";
 import { ref } from "vue";
 import IconTrash from "~icons/mdi/trash";
 
 const boxes = ref([1, 4, 5]);
+
+const marblesCount = computed(() => boxes.value.reduce((sum, n) => sum + n, 0));
 
 const addBox = () => {
   boxes.value.push(0);
@@ -23,7 +26,7 @@ const deleteBox = (index: number) => {
 <template>
   <div class="main">
     <span>Boxes count {{ boxes.length }}</span>
-    <span>Marbles count</span>
+    <span>Marbles count {{marblesCount}}</span>
     <button @click="addBox">Add new box</button>
 
     <div v-for="(box, index) in boxes" :key="index" class="box">
