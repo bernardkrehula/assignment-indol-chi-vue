@@ -6,8 +6,12 @@ const boxes = ref([1, 4, 5]);
 
 const addBox = () => {
   boxes.value.push(0);
-}
-const increment = () => {};
+};
+
+const increment = (index: number) => {
+  if (boxes.value[index] !== undefined) return boxes.value[index]++;
+};
+
 const decrement = () => {};
 const deleteBox = () => {};
 </script>
